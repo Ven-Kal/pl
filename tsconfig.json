@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+	 "jsx": "react-jsx",
+    "moduleResolution": "Bundler",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "dist",
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": false,
+    "noEmit": false,
+	
+	"emitDecoratorMetadata": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+	"baseUrl": ".", // Add this line to set the base directory
+	"paths": {
+      "@shared/*": ["./shared/*"], // Make sure this points to the right location
+      "@server/*": ["./server/*"],
+      "@client/*": ["./client/src/*"]
+    }
+  },
+  
+  "include": ["server/**/*.ts", "client/src/**/*.ts", "vite.config.ts"],
+  "exclude": ["node_modules"]
+}

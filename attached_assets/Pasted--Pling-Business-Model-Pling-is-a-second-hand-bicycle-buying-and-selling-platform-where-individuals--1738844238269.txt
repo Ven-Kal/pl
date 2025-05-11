@@ -1,0 +1,233 @@
+
+
+Pling Business Model Pling is a second-hand bicycle buying and selling platform where individuals and retail shops can list their bicycles. Interested buyers can explore listings, check seller details, and reach out to them directly. For bicycles priced above INR 15,000, we provide an option to ship them at a cost between INR 500-2000. User should always land on the Index/Landing Page, post 2 minutes it should prompt to check his location with a dropdown to select. Integration of tawk.to is also required as the chat option should be available on all pages across for support.
+
+Objective:
+Develop website for Pling, an online Second-hand bicycle marketplace, with user-friendly UI/UX, structured bicycle listing, categorized search functionality, and an intuitive seller registration process.
+
+1. Index/Landing Page
+Design a visually appealing landing page with a sticky navbar including a global search bar, category filters, and a ‘Sell Bicycle’ button. Ensure users always land on this page. After 2 minutes, trigger a location selection popup. Clicking on login should only trigger a modal if the user is trying to list a bicycle or contact a seller." On the landing page, display a structured grid of bicycle listings. Each listing should show the bicycle image, brand, model, price, and condition badge. Ensure sorting by Latest, Price (Low-High/High-Low), and Relevance. Use AJAX for quick filtering."
+Header (Sticky Navbar)
+Include the following tabs on landing/Index page:
+Global Search Bar
+Premium Bicycles
+Adult Bicycles
+Kids Bicycles
+E-Bicycles
+Pling! Certified
+Location Selector (Dropdown)
+Login / Register / User Profile (Should prompt a login modal when clicked only at the end while a seller tries to list the bicycle or customer is clicking for seller contact details)
+Sell Bicycle (Sticky Button on the Top Right)
+2. Pop-up Trigger (User Location Prompt)
+Trigger Condition: Display a popup 2 minutes after the user lands on the website.
+Popup Content:
+“Select Your Location”
+Dropdown listing cities (e.g., Mumbai, Delhi, Bangalore, etc.), if selected Mumbai it should show subcategory like Navi Mumbai, Greater Mumbai, Thane, South Mumbai
+Selection should allow smooth navigation after choosing the city.
+
+After 2 minutes on the landing page, display a modal with a dropdown asking users to select their location. If a city is selected (e.g., Mumbai), dynamically load subcategories (e.g., Navi Mumbai, South Mumbai). Ensure smooth navigation after selection."
+
+3. Seller Flow – Sell Bicycle Form
+
+When a seller clicks ‘Sell Bicycle,’ open a structured, multi-step form. Step 1 collects bicycle details with relevant dropdowns and validation rules. Step 2 prompts non-logged-in users to register before listing. Ensure AJAX-based submission to avoid page reload." Login should be modal-based and triggered only when needed. If a non-registered user attempts to log in, display a ‘Sign up now!’ prompt. Enable Google and Facebook login options. Ensure validation for all fields."
+Trigger: Clicking the Sell Bicycle button should open a structured form with the following fields:
+Step 1: Bicycle Details
+Category (Dropdown: Children / Adult)
+If "Children" is selected → Disable "Cycle Type" & remove "27.5 & 29-inch" wheel sizes.
+Brand Name (Dropdown with popular brands + "Other" → Opens a text field)
+Model Name (Text input – Allow only Alphanumeric)
+Purchase Year (Dropdown – Years ranging from 2000 to present)
+Expected Price (Numeric, Minimum: ₹100, Maximum: ₹99,999)
+Gear Transmission (Dropdown: Geared / Non-Geared)
+Frame Material (Dropdown: Steel / Alloy / Aluminium / Carbon Fiber)
+Suspension (Dropdown: Front / Rear / Both / None)
+Condition (Dropdown: Fair / Good / Like New)
+Cycle Type (Dropdown: Hybrid / City / Mountain / Road / Folding)
+Wheel Size (Dropdown: 14", 16", 20", 24", 26", 27.5", 29")
+Original Receipt Available? (Dropdown: Yes / No)
+Additional Details (Text Area – Open-ended for damage/modifications)
+Upload Multiple Images (Multiple Image Upload - JPG, PNG, WebP formats)
+Step 2: Registration (If Not Logged In)
+If the seller is not logged in, prompt a registration form before saving the listing.
+Fields:
+First Name & Last Name
+Mobile Number (Numeric Only)
+Email ID (Validation Required)
+City & Sub-City Selection (Dropdown)
+Password & Confirm Password
+Social Login Options (Google / Facebook)
+Logic:
+If the expected price is ₹15,000+, auto-classify it as Premium Bicycle
+If Category = Children, hide "Cycle Type" & restrict wheel sizes (Exclude 27.5" & 29")
+
+4. Buyer Flow – Bicycle Listings & Filtering
+
+Login should be modal-based and triggered only when needed. If a non-registered user attempts to log in, display a ‘Sign up now!’ prompt. Enable Google and Facebook login options. Ensure validation for all fields."
+Index/Landing Page Layout
+Hero Section:
+Image Slider with Promotional Banners (Auto-scroll)
+Promotional messages (e.g., “Buy Certified Bicycles”, “Safe & Trusted Marketplace”)
+Product Listing Grid
+Bicycle image
+Brand & Model Name
+Price
+Condition Badge (Fair / Good / Like New)
+"View Details" Button
+
+5. Login & Registration Flow
+Login Modal should appear when clicking the Login Button.
+If a non-registered user tries logging in → Show message "Not registered? Sign up now!"
+Provide option of ‘sign in with Google’
+Registration should be the same as the Seller Flow Step 2.
+
+6. Footer Section
+Design a structured footer with easy navigation to About Us, FAQ, Blogs, Contact Us, Community Forum, and Business Inquiry. Implement SEO-optimized metadata."
+Links to:
+About Us
+FAQ
+Blogs
+Contact Us
+Community Forum
+Business Inquiry
+
+Additional Functionalities
+SEO Optimization:
+Add meta tags (title, description, keywords, robots)
+Include structured data schema for better indexing
+Performance Optimization:
+Optimize images (Lazy Loading)
+Minify CSS & JavaScript
+Implement Google PageSpeed Optimizations
+
+Final Notes:
+Ensure responsive design for both mobile & desktop views.
+Use AJAX for form submissions (so the page doesn’t reload).
+Validate all user inputs (e.g., restrict special characters in number fields).
+Enable session management to keep users logged in.
+
+
+
+
+Premium Bicycle Buyer Page - Feature Requirements
+1. Premium Bicycle Hover Info:
+
+On hover over the 'Premium' tab, show a tooltip explaining premium bicycles. Clicking should open a dedicated listing page with filtering, sorting, and detailed bicycle thumbnails. Ensure an intuitive UI with related product suggestions."
+
+"Implement category-based listing pages for Adult and Kids bicycles with the same structure as the Premium Bicycle page, ensuring intuitive browsing.
+When a buyer hovers over the "Premium" tab, a small tooltip should appear explaining what premium bicycles are.
+Text Example: "Premium bicycles are endurance and performance-focused bikes used by professional cyclists, priced above ₹15,000."
+A single-click should open the dedicated Premium Bicycle listing page.
+
+2. Premium Bicycle Listing Page:
+The page should open with a banner on top.
+Below the banner, there should be a Sort By dropdown with options:
+Latest Added
+Price: Low to High
+Price: High to Low
+Relevance
+On the left-hand side, there should be filter options, derived from the bicycle selling form:
+Cycle Type: City, Mountain, Hybrid
+Condition: Fair, Good, New
+Gear Transmission
+Frame Material
+Suspension
+Wheel Size
+Brand
+Purchase Year
+Sold Status
+Pricing Filter: A slider to select a price range
+
+3. Bicycle Thumbnail Display:
+Thumbnails should include:
+Images that auto-scroll (carousel effect)
+Brand Name
+Model Name
+Purchase Year
+Seller's Quoted Price
+Clicking on a thumbnail should open a detailed product page.
+
+4. Detailed Bicycle Product Page:
+Product Information: Display all details provided by the seller in a modern and structured format.
+Option to add it to wishlist and share it with friends via any channel
+Brand Information Section:
+Basic details about the selected brand (e.g., Cannondale headquarters, famous models, customer service number, nearest service centers, etc.).
+Related Products: Suggest similar bicycles based on type, price range, and location.
+FAQ Section: Contextual FAQs based on the bicycle type and buyer profile.
+Image Viewing:
+Large bicycle images with zoom functionality.
+Thumbnails should open as a pop-up carousel.
+
+5. Contacting the Seller:
+A button should allow buyers to contact the seller, displaying:
+Seller Name
+Seller Email ID
+Seller Mobile Number
+How many bicycles he has sold
+His rating by buyers
+Clicking on this button should:
+Log an entry in the backend to track interest.
+Trigger an email & SMS to notify the seller.
+If a user is not logged in, a prompt should appear, requiring login before showing seller details.
+
+6. Additional Tabs for Adult & Kids Bicycles:
+Similar functionality should be applied to the Adult Bicycle and Kids Bicycle tabs at the top.
+
+Final Thoughts:
+This page should provide a seamless buying experience, ensuring an intuitive UI/UX with clear navigation, filters, and seller interaction mechanisms.
+
+
+Footer Pages
+About Us
+Static page using pre-designed Figma CSS.
+FAQ Page
+Search Bar above the banner with keyword suggestions.
+Left-Side Categories Panel.
+Expandable Q&A Sections.
+Admin Panel for Easy Edits & Additions.
+Blog Page
+Top Banner with 3 featured blogs in a grid/collage.
+Search Bar.
+Unlimited Blog Grid Display.
+Blog Thumbnail Details:
+Image, Read Time, Writer, Headline, Short Description.
+Left-Side Tags & Categories for Filtering.
+Admin Panel for Adding/Editing Blogs Easily.
+Contact Us Page
+Business details (Location, Phone, Email, Support ID).
+Business Inquiry Section:
+Dropdown: Sell in Bulk / Buy in Bulk / Partner with Pling / Society Bicycle Pickup.
+Text Box for Custom Inquiry.
+Name, Mobile, Email.
+Saves in Database & Sends Email Alert.
+FAQs Related to Buying/Selling.
+4. User Profile Page should be accessible via User Profile button available on top post logging in or registration
+Buyer/Seller Profile
+Profile Image, First Name, Last Name, Email, Password Change Option.
+Mobile Number, Location, Pincode.
+Cycling Proficiency: Occasional / Fitness / Professional / Leisure.
+Community Membership: Option to join "Pedal Pack".
+Listed Bicycles Section:
+View, Edit, Mark as Sold (asks if sold via Pling or other platforms & requests rating).
+Option to Temporarily De-list.
+Wishlist tab: Users can see bicycles they have wishlisted till now
+Institutional/Retail Sellers
+Shop Name, Owner Picture, Shop Picture.
+Description (Years in Business, Location).
+Ratings & Reviews.
+Listed Bicycles Display.
+Dedicated Retailer Page:
+Add new bicycles, offers, services (at-home repair, bike fit, customization, accessories).
+Click Tracking for Lead Generation.
+Social Media Links (Facebook, Instagram).
+
+
+
+website should be:
+Fully mobile-friendly
+Simplified, modern, and futuristic
+SEO-optimized (Meta tags, descriptions, sitemap, schema markup, canonicalization, etc.)
+Google Search Console ready (Sitemap in footer, indexing API, robots.txt)
+Optimized for digital marketing (Google & Meta ads compatibility)
+I'll ensure it meets Google's highest standards for ranking and performance. 
+
+
