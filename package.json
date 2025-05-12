@@ -10,10 +10,9 @@
     "build": "npm run build:client && npm run build:server",
     "start": "node dist/server/index.js",
     "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
-    "dev:client": "npx vite",
+    "dev:client": "vite",
     "dev:server": "tsx watch server/index.ts",
-    "db:push": "drizzle-kit push",
-    "postinstall": "npm run build"
+    "db:push": "drizzle-kit push"
   },
   "dependencies": {
     "@firebase/auth": "^1.9.0",
@@ -103,8 +102,7 @@
     "wouter": "^3.3.5",
     "ws": "^8.18.0",
     "zod": "^3.23.8",
-    "zod-validation-error": "^3.4.0",
-    "vite": "^5.3.5"
+    "zod-validation-error": "^3.4.0"
   },
   "devDependencies": {
     "@replit/vite-plugin-runtime-error-modal": "^0.0.3",
@@ -121,7 +119,7 @@
     "@types/react-dom": "^18.3.5",
     "@types/uuid": "^10.0.0",
     "@types/ws": "^8.5.14",
-    "@vitejs/plugin-react": "^4.4.0",
+    "@vitejs/plugin-react": "^4.4.1",
     "autoprefixer": "^10.4.20",
     "concurrently": "^9.1.2",
     "cross-env": "^7.0.3",
@@ -134,7 +132,8 @@
     "ts-node-dev": "^2.0.0",
     "tsconfig-paths": "^4.2.0",
     "tsx": "^4.19.4",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
   },
   "optionalDependencies": {
     "bufferutil": "^4.0.8"
