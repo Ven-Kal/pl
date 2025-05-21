@@ -5,6 +5,7 @@
   "license": "MIT",
   "main": "dist/server/index.js",
   "scripts": {
+      "prebuild": "rm -rf node_modules package-lock.json && npm install",
     "build:client": "npx vite build",
     "build:server": "npx tsc -p tsconfig.server.json",
     "build": "npm run build:client && npm run build:server",
